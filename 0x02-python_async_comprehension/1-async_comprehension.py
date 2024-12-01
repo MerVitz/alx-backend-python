@@ -3,7 +3,7 @@
 Module that defines an asynchronous comprehension.
 """
 from typing import List
-from 0-async_generator import async_generator
+from async_generator import async_generator
 
 
 async def async_comprehension() -> List[float]:
