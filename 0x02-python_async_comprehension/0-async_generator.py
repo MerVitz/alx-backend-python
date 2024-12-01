@@ -1,19 +1,16 @@
 #!/usr/bin/env python3
 """
-Module that defines an asynchronous generator.
+Module that defines an asynchronous comprehension.
 """
-import asyncio
-import random
-from typing import AsyncGenerator
+from typing import List
+from 0-async_generator import async_generator
 
 
-async def async_generator() -> AsyncGenerator[float, None]:
+async def async_comprehension() -> List[float]:
     """
-    Asynchronous generator that yields random numbers between 0 and 10.
+    Collects 10 random numbers from async_generator using async comprehension.
 
-    Loops 10 times, waiting 1 second before yielding each random number.
+    Returns:
+        List[float]: List of 10 random numbers.
     """
-    for _ in range(10):
-        await asyncio.sleep(1)
-        yield random.uniform(0, 10)
-
+    return [number async for number in async_generator()]
