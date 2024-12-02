@@ -9,7 +9,8 @@ from async_comprehension import async_comprehension
 
 async def measure_runtime() -> float:
     """
-    Executes async_comprehension four times in parallel and measures the runtime.
+    Executes async_comprehension four times
+    in parallel and measures the runtime.
 
     Returns:
         float: Total runtime for the parallel execution.
