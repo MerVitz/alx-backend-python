@@ -3,7 +3,7 @@
 Module that defines an asynchronous comprehension.
 """
 from typing import List
-from 0_async_generator import async_generator
+from async_generator import async_generator
 
 async def async_comprehension() -> List[float]:
     """
@@ -12,4 +12,4 @@ async def async_comprehension() -> List[float]:
     Returns:
         List[float]: A list of 10 random numbers.
     """
-    return [number async for number in async_generator()
+    return [number async for number in async_generator()]
