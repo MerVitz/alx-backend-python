@@ -4,7 +4,7 @@ Module to measure the runtime of four parallel async comprehensions.
 """
 import asyncio
 from typing import Callable
-from 1-async_comprehension import async_comprehension
+from async_comprehension import async_comprehension
 
 
 async def measure_runtime() -> float:
@@ -19,4 +19,3 @@ async def measure_runtime() -> float:
                          async_comprehension(), async_comprehension())
     end = asyncio.get_event_loop().time()
     return end - start
-
