@@ -15,7 +15,9 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         """Set up mock responses for requests.get."""
-        cls.get_patcher = patch("requests.get", side_effect=cls.get_mock_response)
+        cls.get_patcher = patch(
+                "requests.get", side_effect=cls.get_mock_response
+                )
         cls.mock_get = cls.get_patcher.start()
 
     @classmethod
@@ -27,9 +29,13 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
     def get_mock_response(url):
         """Mock the response for requests.get."""
         if url.endswith("orgs/google"):
-            return Mock(json=lambda: TestIntegrationGithubOrgClient.org_payload)
+            return Mock(
+                    json=lambda: TestIntegrationGithubOrgClient.org_payload
+                    )
         elif url.endswith("orgs/google/repos"):
-            return Mock(json=lambda: TestIntegrationGithubOrgClient.repos_payload)
+            return Mock(
+                    json=lambda: TestIntegrationGithubOrgClient.repos_payload
+                    )
         return Mock(json=lambda: {})
 
     def test_public_repos(self):
